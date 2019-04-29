@@ -1,4 +1,12 @@
-import javafx.geometry.Insets;
+/**
+ * John Urbani
+ * CS110 Boggle Phase 3: TilePane
+ * A child of the HBox class that is a HBox containing
+ * a Tile object and whether the object is selected or
+ * not. This tile will display its letter in the center
+ * and change colors based on selection.
+ */
+
 import javafx.geometry.Pos;
 import javafx.scene.layout.HBox;
 import javafx.scene.text.Text;
@@ -16,14 +24,15 @@ public class TilePane extends HBox {
         Text letter = new Text();
         setAlignment(Pos.CENTER);
         String tileLetter = t.getLetter();
+        // Make sure Qu stays capital Q lowercase u
         if(tileLetter.equals("Qu")) {
             letter.setText(tileLetter);
         } else {
+            // Every other letter should be uppercase
             letter.setText(tileLetter.toUpperCase());
         }
 
         getChildren().add(letter);
-        setPadding(new Insets(10,10,10,10));
         setMaxSize(75,75);
         setMinSize(75, 75);
         setStyles();
